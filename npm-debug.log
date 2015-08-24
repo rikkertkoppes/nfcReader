@@ -1,0 +1,165 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/rikkert/.nvm/versions/v0.12.2/bin/node',
+1 verbose cli   '/home/rikkert/.nvm/versions/v0.12.2/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'nfc',
+1 verbose cli   '--save' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 warn package.json nfcreadtest@1.0.0 No description
+5 warn package.json nfcreadtest@1.0.0 No repository field.
+6 warn package.json nfcreadtest@1.0.0 No README data
+7 silly cache add args [ 'nfc', null ]
+8 verbose cache add spec nfc
+9 silly cache add parsed spec { raw: 'nfc',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'nfc',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: '*',
+9 silly cache add   type: 'range' }
+10 verbose addNamed nfc@*
+11 silly addNamed semver.valid null
+12 silly addNamed semver.validRange *
+13 silly addNameRange { name: 'nfc', range: '*', hasData: false }
+14 silly mapToRegistry name nfc
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry uri https://registry.npmjs.org/nfc
+18 verbose addNameRange registry:https://registry.npmjs.org/nfc not in flight; fetching
+19 verbose request uri https://registry.npmjs.org/nfc
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 00:04:43
+22 verbose request id e4ed5cce999db1ea
+23 verbose etag "EK0NCH7U4O7PT9XZI0I9HA3YQ"
+24 http request GET https://registry.npmjs.org/nfc
+25 http 304 https://registry.npmjs.org/nfc
+26 silly get cb [ 304,
+26 silly get   { date: 'Fri, 21 Aug 2015 22:04:43 GMT',
+26 silly get     via: '1.1 varnish',
+26 silly get     'cache-control': 'max-age=60',
+26 silly get     etag: '"EK0NCH7U4O7PT9XZI0I9HA3YQ"',
+26 silly get     age: '0',
+26 silly get     connection: 'keep-alive',
+26 silly get     'x-served-by': 'cache-fra1240-FRA',
+26 silly get     'x-cache': 'MISS',
+26 silly get     'x-cache-hits': '0',
+26 silly get     'x-timer': 'S1440194683.562287,VS0,VE402',
+26 silly get     vary: 'Accept' } ]
+27 verbose etag https://registry.npmjs.org/nfc from cache
+28 verbose get saving nfc to /home/rikkert/.npm/registry.npmjs.org/nfc/.cache.json
+29 silly addNameRange number 2 { name: 'nfc', range: '*', hasData: true }
+30 silly addNameRange versions [ 'nfc', [ '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.5' ] ]
+31 verbose addNamed nfc@0.0.5
+32 silly addNamed semver.valid 0.0.5
+33 silly addNamed semver.validRange 0.0.5
+34 silly cache afterAdd nfc@0.0.5
+35 verbose afterAdd /home/rikkert/.npm/nfc/0.0.5/package/package.json not in flight; writing
+36 verbose afterAdd /home/rikkert/.npm/nfc/0.0.5/package/package.json written
+37 silly install resolved [ { name: 'nfc',
+37 silly install resolved     version: '0.0.5',
+37 silly install resolved     description: 'Node NFC functionallity through libnfc',
+37 silly install resolved     main: 'index.js',
+37 silly install resolved     scripts:
+37 silly install resolved      { test: 'echo "Error: no test specified" && exit 1',
+37 silly install resolved        install: 'node-gyp rebuild' },
+37 silly install resolved     repository: { type: 'git', url: 'https://github.com/Camme/node-nfc.git' },
+37 silly install resolved     keywords: [ 'nfc' ],
+37 silly install resolved     author: { name: 'Camilo Tapia', email: 'camilo.tapia@gmail.com' },
+37 silly install resolved     license: 'MIT',
+37 silly install resolved     gypfile: true,
+37 silly install resolved     bugs: { url: 'https://github.com/Camme/node-nfc/issues' },
+37 silly install resolved     homepage: 'https://github.com/Camme/node-nfc',
+37 silly install resolved     _id: 'nfc@0.0.5',
+37 silly install resolved     dist:
+37 silly install resolved      { shasum: '3167cc6b2e6e0b8679f7999f0ab9ba58b2240da0',
+37 silly install resolved        tarball: 'http://registry.npmjs.org/nfc/-/nfc-0.0.5.tgz' },
+37 silly install resolved     _from: 'nfc@*',
+37 silly install resolved     _npmVersion: '1.4.3',
+37 silly install resolved     _npmUser: { name: 'camilo.tapia', email: 'camilo.tapia@gmail.com' },
+37 silly install resolved     maintainers: [ [Object], [Object] ],
+37 silly install resolved     directories: {},
+37 silly install resolved     _shasum: '3167cc6b2e6e0b8679f7999f0ab9ba58b2240da0',
+37 silly install resolved     _resolved: 'https://registry.npmjs.org/nfc/-/nfc-0.0.5.tgz',
+37 silly install resolved     readme: 'ERROR: No README data found!' } ]
+38 info install nfc@0.0.5 into /home/rikkert/Documents/nfcreadtest
+39 info installOne nfc@0.0.5
+40 verbose installOne of nfc to /home/rikkert/Documents/nfcreadtest not in flight; installing
+41 verbose lock using /home/rikkert/.npm/_locks/nfc-01f179deca5fd461.lock for /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+42 silly install write writing nfc 0.0.5 to /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+43 silly cache addNamed cb nfc@0.0.5
+44 verbose unbuild node_modules/nfc
+45 silly gentlyRm /home/rikkert/Documents/nfcreadtest/node_modules/nfc is being purged from base /home/rikkert/Documents/nfcreadtest
+46 verbose gentlyRm don't care about contents; nuking /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+47 verbose tar unpack /home/rikkert/.npm/nfc/0.0.5/package.tgz
+48 verbose tar unpacking to /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+49 silly gentlyRm /home/rikkert/Documents/nfcreadtest/node_modules/nfc is being purged
+50 verbose gentlyRm don't care about contents; nuking /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+51 silly gunzTarPerm modes [ '775', '664' ]
+52 silly gunzTarPerm extractEntry package.json
+53 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+54 silly gunzTarPerm extractEntry .npmignore
+55 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+56 silly gunzTarPerm extractEntry README.md
+57 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+58 silly gunzTarPerm extractEntry index.js
+59 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+60 silly gunzTarPerm extractEntry test.js
+61 silly gunzTarPerm modified mode [ 'test.js', 420, 436 ]
+62 silly gunzTarPerm extractEntry binding.gyp
+63 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 436 ]
+64 silly gunzTarPerm extractEntry src/nfc.cc
+65 silly gunzTarPerm modified mode [ 'src/nfc.cc', 420, 436 ]
+66 silly gunzTarPerm extractEntry temp.c
+67 silly gunzTarPerm modified mode [ 'temp.c', 420, 436 ]
+68 info preinstall nfc@0.0.5
+69 silly install resolved []
+70 verbose about to build /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+71 info build /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+72 verbose linkStuff [ false,
+72 verbose linkStuff   false,
+72 verbose linkStuff   false,
+72 verbose linkStuff   '/home/rikkert/Documents/nfcreadtest/node_modules' ]
+73 info linkStuff nfc@0.0.5
+74 verbose linkBins nfc@0.0.5
+75 verbose linkMans nfc@0.0.5
+76 verbose rebuildBundles nfc@0.0.5
+77 info install nfc@0.0.5
+78 verbose unsafe-perm in lifecycle true
+79 info nfc@0.0.5 Failed to exec install script
+80 verbose unlock done using /home/rikkert/.npm/_locks/nfc-01f179deca5fd461.lock for /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+81 verbose stack Error: nfc@0.0.5 install: `node-gyp rebuild`
+81 verbose stack Exit status 1
+81 verbose stack     at EventEmitter.<anonymous> (/home/rikkert/.nvm/versions/v0.12.2/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
+81 verbose stack     at EventEmitter.emit (events.js:110:17)
+81 verbose stack     at ChildProcess.<anonymous> (/home/rikkert/.nvm/versions/v0.12.2/lib/node_modules/npm/lib/utils/spawn.js:14:12)
+81 verbose stack     at ChildProcess.emit (events.js:110:17)
+81 verbose stack     at maybeClose (child_process.js:1015:16)
+81 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+82 verbose pkgid nfc@0.0.5
+83 verbose cwd /home/rikkert/Documents/nfcreadtest
+84 error Linux 3.16.0-46-generic
+85 error argv "/home/rikkert/.nvm/versions/v0.12.2/bin/node" "/home/rikkert/.nvm/versions/v0.12.2/bin/npm" "install" "nfc" "--save"
+86 error node v0.12.2
+87 error npm  v2.7.4
+88 error code ELIFECYCLE
+89 error nfc@0.0.5 install: `node-gyp rebuild`
+89 error Exit status 1
+90 error Failed at the nfc@0.0.5 install script 'node-gyp rebuild'.
+90 error This is most likely a problem with the nfc package,
+90 error not with npm itself.
+90 error Tell the author that this fails on your system:
+90 error     node-gyp rebuild
+90 error You can get their info via:
+90 error     npm owner ls nfc
+90 error There is likely additional logging output above.
+91 verbose exit [ 1, true ]
+92 verbose unbuild node_modules/nfc
+93 info preuninstall nfc@0.0.5
+94 info uninstall nfc@0.0.5
+95 verbose unbuild rmStuff nfc@0.0.5 from /home/rikkert/Documents/nfcreadtest/node_modules
+96 info postuninstall nfc@0.0.5
+97 silly gentlyRm /home/rikkert/Documents/nfcreadtest/node_modules/nfc is being purged from base /home/rikkert/Documents/nfcreadtest
+98 verbose gentlyRm don't care about contents; nuking /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+99 silly vacuum-fs purging /home/rikkert/Documents/nfcreadtest/node_modules/nfc
+100 silly vacuum-fs removing /home/rikkert/Documents/nfcreadtest/node_modules
+101 silly vacuum-fs finished vacuuming up to /home/rikkert/Documents/nfcreadtest
