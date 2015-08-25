@@ -1,0 +1,6 @@
+{
+	"port": 13900,
+	"nodes": ["rfid"],
+	"bindings": [
+	]
+}
