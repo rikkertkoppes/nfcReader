@@ -8,7 +8,11 @@ var removeTimer;
 
 function handleDetect(uid) {
 	var a = Array.prototype.slice.call(uid).map(function(b) {
-		return b.toString(16);
+		var s = b.toString(16);
+		if (s.length < 2) {
+			s = '0'+s;
+		}
+		return s;
 	}).join('-').toUpperCase();
 	clearTimeout(removeTimer);
 	if (a !== currentTag) {
