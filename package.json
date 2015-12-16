@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nfc": "0.0.5"
+    "nfc": "0.0.5",
+    "pusher": "^1.0.6"
   }
 }
