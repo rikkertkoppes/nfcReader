@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "nfc": "0.0.5",
-    "pusher": "^1.0.6"
+    "pusher": "^1.0.6",
+    "request": "^2.79.0"
   }
 }
