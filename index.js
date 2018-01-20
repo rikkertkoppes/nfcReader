@@ -15,26 +15,47 @@ var removeTimer;
 var endpoint = config.camarillo.endpoint + 'controls/';
 var key = config.camarillo.key;
 
-function checkPerformance(uid) {
-	var url = endpoint + 'parts?key='+key+'&performances.member.meta.uuid='+uid
-	request.get(url, function(err, response, body) {
-		var parts = JSON.parse(body);
-		var performances = parts.reduce(function(all, part) {
-			return all.concat(part.performances.filter(function(performance) {
-				return performance.member.meta.uuid == uid;
-			}));
-		}, []);
-		performances.forEach(function(performance) {
-			var url = endpoint + 'parts/'+performance.partId+'/performances/'+performance.id+'/status?key='+key;
-			var status = performance.meta.status === 'done_all'?'done_all':'done';
-			var name = [performance.member.firstName,performance.member.infix,performance.member.lastName].join(' ');
-			console.log('set',name,'to',status);
-			request.put(url, {
-				body: {
-					status: status
-				},
-				json: true
-			});
+function handleResponse(cb) {
+	return function(err, res) {
+		if (err) {return console.log(err);}
+		cb(JSON.parse(res.body));
+	}
+}
+
+function getParts(competitionId, cb) {
+	var url = endpoint + 'competitions/' + competitionId + '/parts?key='+key;
+	request.get(url, handleResponse(cb));
+}
+
+function getCompetitions(cb) {
+	var url = endpoint + 'competitions?key='+key;
+	request.get(url, handleResponse(cb));	
+}
+
+function fetchParts(cb) {
+	getCompetitions(function(competitions) {
+		getParts(competitions[0]._id, cb);
+	});
+}
+
+function checkPerformance(uid, parts) {
+	var performances = parts.reduce(function(all, part) {
+		return all.concat(part.performances.filter(function(performance) {
+			return performance.member.meta.uuid == uid;
+		}));
+	}, []);
+	console.log(performances.length);
+	performances.forEach(function(performance) {
+		var url = endpoint + 'parts/'+performance.partId+'/performances/'+performance.id+'/status?key='+key;
+		console.log(url);
+		var status = performance.meta.status === 'done_all'?'done_all':'done';
+		var name = [performance.member.firstName,performance.member.infix,performance.member.lastName].join(' ');
+		console.log('set',name,'to',status);
+		request.put(url, {
+			body: {
+				status: status
+			},
+			json: true
 		});
 	});
 }
@@ -44,7 +65,7 @@ function beep() {
 	exec(['aplay',path.resolve('beep-07.wav')].join(' '));
 }
 
-function handleDetect(uid) {
+function handleDetect(uid, context) {
 	var a = Array.prototype.slice.call(uid).map(function(b) {
 		var s = b.toString(16);
 		if (s.length < 2) {
@@ -58,7 +79,7 @@ function handleDetect(uid) {
 	    handleEvent({
 	    	type: 'detect',
 	    	uid: currentTag
-	    });
+	    }, context);
 	    beep();
 	}
 	removeTimer = setTimeout(handleRemove,removeDelay);
@@ -72,17 +93,19 @@ function handleRemove() {
 	currentTag = undefined;
 }
 
-function handleEvent(e) {
+function handleEvent(e, context) {
 	if (e.type === 'detect') {
 		//push to pusher
 		pusher.trigger('camarillo', 'scan-uid', e);
-		checkPerformance(e.uid);
+		checkPerformance(e.uid, context);
 	}
 	console.log(JSON.stringify(e));
 }
 
-n.on('uid', function(uid) {
-	handleDetect(uid);
-});
+fetchParts(function(parts) {
+	n.on('uid', function(uid) {
+		handleDetect(uid, parts);
+	});
 
-n.start();
+	n.start();
+});
